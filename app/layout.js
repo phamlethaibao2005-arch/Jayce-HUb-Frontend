@@ -1,0 +1,36 @@
+import { Inter, Bebas_Neue, JetBrains_Mono } from 'next/font/google'
+import './globals.css'
+
+const inter = Inter({
+  subsets: ['latin', 'vietnamese'],
+  weight: ['300','400','500','600','700','800','900'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const bebas = Bebas_Neue({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-bebas',
+  display: 'swap',
+})
+
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400','500','700'],
+  variable: '--font-mono',
+  display: 'swap',
+})
+
+export const metadata = {
+  title: 'UniHub Workshop // Bước vào không gian tri thức tương lai',
+  description: 'Nền tảng đăng ký workshop đại học — Optimistic Locking · VNPAY · Offline PWA Check-in · Gemini 2.5 Flash AI Summary',
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="vi" className={`${inter.variable} ${bebas.variable} ${mono.variable}`}>
+      <body className="font-sans bg-white text-[#111111] antialiased">{children}</body>
+    </html>
+  )
+}
